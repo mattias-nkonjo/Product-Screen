@@ -8,7 +8,7 @@ class GeepxTheme {
     appBarTheme: const AppBarTheme(
       backgroundColor: ColorPalette.whiteColor,
       iconTheme: IconThemeData(
-        color: ColorPalette.blackColor,
+        color: Color(0xFF43474E),
         size: 25,
       ),
       titleTextStyle: TextStyle(
@@ -17,97 +17,225 @@ class GeepxTheme {
       ),
       elevation: 0.0,
     ),
-    scaffoldBackgroundColor: ColorPalette.whiteColor,
+    cardTheme: const CardTheme(
+      color: Color(0XFFFBFCFE),
+      elevation: 2.0,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(
+          Radius.circular(10),
+        ),
+      ),
+    ),
+    scaffoldBackgroundColor: const Color(0xFFFFFFFF),
     iconTheme: const IconThemeData(
-      color: ColorPalette.blackColor,
+      color: Color(0XFF001C39),
+    ),
+    dividerTheme: const DividerThemeData(
+      color: Color(0xFFC3C6CF),
+      thickness: 1.5,
+    ),
+    textButtonTheme: TextButtonThemeData(
+      style: TextButton.styleFrom(
+        iconColor: const Color(0xFF195FA7),
+        foregroundColor: const Color(0xFF195FA7),
+      ),
+    ),
+    chipTheme: const ChipThemeData(
+      backgroundColor: Color(0xFFFBFCFE),
+      elevation: 0.0,
+      side: BorderSide(
+        color: Color(0xFFC3C6CF),
+      ),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(
+          Radius.circular(10),
+        ),
+      ),
+      labelStyle: TextStyle(
+        color: Color(0xFF43474E),
+      ),
+      checkmarkColor: Color(0xFF001C39),
+      selectedColor: Color(0xFFD4E3FF),
+      secondarySelectedColor: Color(0xFF001C39),
+      disabledColor: Color(0xFFFBFCFE),
+      showCheckmark: true,
     ),
     floatingActionButtonTheme: const FloatingActionButtonThemeData(
-      foregroundColor: ColorPalette.whiteColor,
-      backgroundColor: ColorPalette.blackColor,
+      foregroundColor: Color(0xFF001C39),
+      backgroundColor: Color(0xFFD4E3FF),
+    ),
+    bottomAppBarTheme: const BottomAppBarTheme(
+      color: Color(0xFFFBFCFE),
+      height: 80,
+      surfaceTintColor: Color(0xFF43474E),
+      elevation: 1.0,
     ),
     textTheme: lightTextTheme,
   );
 
   static ThemeData darkTheme = ThemeData(
+    scaffoldBackgroundColor: const Color(0xFF191C1E),
     brightness: Brightness.dark,
     appBarTheme: const AppBarTheme(
-      foregroundColor: ColorPalette.whiteColor,
-      backgroundColor: ColorPalette.blackColor,
+      foregroundColor: Color(0xFFC3C6CF),
+      backgroundColor: Color(0xFF191C1E),
+      elevation: 0.0,
+    ),
+    dividerTheme: const DividerThemeData(
+      color: Color(0xFF43474E),
+      thickness: 1.5,
     ),
     floatingActionButtonTheme: const FloatingActionButtonThemeData(
-      foregroundColor: ColorPalette.whiteColor,
-      backgroundColor: ColorPalette.nBlueColor,
+      foregroundColor: Color(0xFFD4E3FF),
+      backgroundColor: Color(0xFF004883),
+    ),
+    bottomAppBarTheme: const BottomAppBarTheme(
+      color: Color(0xFF242A30),
+      height: 80,
+      elevation: 0.0,
+      surfaceTintColor: Color(0xFFC3C6CF),
     ),
     iconTheme: const IconThemeData(
-      color: ColorPalette.whiteColor,
-      size: 25,
+      color: Color(0XFFD4E3FF),
+    ),
+    cardTheme: const CardTheme(
+      color: Color.fromARGB(255, 50, 55, 58),
+      elevation: 2.0,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(
+          Radius.circular(10),
+        ),
+      ),
+    ),
+    textButtonTheme: TextButtonThemeData(
+      style: TextButton.styleFrom(
+        iconColor: const Color(0xFFA4C8FF),
+        foregroundColor: const Color(0xFFA4C8FF),
+      ),
+    ),
+    chipTheme: const ChipThemeData(
+      backgroundColor: Color(0xFF1E1E1E),
+      elevation: 0.0,
+      side: BorderSide(
+        color: Color(0xFFD4E3FF),
+      ),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(
+          Radius.circular(10),
+        ),
+      ),
+      labelStyle: TextStyle(
+        color: Color(0xFFD4E3FF),
+      ),
+      selectedColor: Color(0xFF004883),
+      showCheckmark: true,
     ),
     textTheme: darkTextTheme,
   );
 
   static TextTheme lightTextTheme = TextTheme(
-    bodyLarge: GoogleFonts.openSans(
-      fontSize: 18.0,
+    bodyLarge: GoogleFonts.roboto(
+      fontSize: 16.0,
       fontWeight: FontWeight.w700,
       color: ColorPalette.blackColor,
     ),
-    bodyMedium: GoogleFonts.openSans(
-      fontSize: 16.0,
-      fontWeight: FontWeight.w500,
-      color: ColorPalette.blackColor,
-    ),
-    bodySmall: GoogleFonts.openSans(
+    bodyMedium: GoogleFonts.roboto(
       fontSize: 14.0,
       fontWeight: FontWeight.w500,
       color: ColorPalette.blackColor,
     ),
-    headlineLarge: GoogleFonts.openSans(
+    bodySmall: GoogleFonts.roboto(
+      fontSize: 12.0,
+      fontWeight: FontWeight.w500,
+      color: ColorPalette.blackColor,
+    ),
+    labelLarge: GoogleFonts.roboto(
+      fontSize: 14.0,
+      fontWeight: FontWeight.w500,
+      color: const Color(0xFF6C7C95),
+    ),
+    labelMedium: GoogleFonts.roboto(
+      fontSize: 12.0,
+      fontWeight: FontWeight.w500,
+      color: const Color(0xFF6C7C95),
+    ),
+    labelSmall: GoogleFonts.roboto(
+      fontSize: 11.0,
+      fontWeight: FontWeight.w500,
+      color: const Color(0xFF6C7C95),
+    ),
+    headlineLarge: GoogleFonts.roboto(
       fontSize: 32.0,
       fontWeight: FontWeight.bold,
       color: ColorPalette.blackColor,
     ),
-    headlineMedium: GoogleFonts.openSans(
-      fontSize: 23.0,
+    headlineMedium: GoogleFonts.roboto(
+      fontSize: 28.0,
       fontWeight: FontWeight.w600,
       color: ColorPalette.blackColor,
     ),
-    headlineSmall: GoogleFonts.openSans(
-      fontSize: 16.0,
+    headlineSmall: GoogleFonts.roboto(
+      fontSize: 24.0,
       fontWeight: FontWeight.w600,
       color: ColorPalette.blackColor,
+    ),
+    titleMedium: GoogleFonts.roboto(
+      fontSize: 18.0,
+      fontWeight: FontWeight.w600,
+      color: const Color(0xFF6C7C95),
     ),
   );
 
   static TextTheme darkTextTheme = TextTheme(
-    bodyLarge: GoogleFonts.openSans(
+    bodyLarge: GoogleFonts.roboto(
       fontSize: 16.0,
       fontWeight: FontWeight.w700,
       color: ColorPalette.whiteColor,
     ),
-    bodyMedium: GoogleFonts.openSans(
+    bodyMedium: GoogleFonts.roboto(
       fontSize: 14.0,
       fontWeight: FontWeight.w500,
       color: ColorPalette.whiteColor,
     ),
-    bodySmall: GoogleFonts.openSans(
+    bodySmall: GoogleFonts.roboto(
       fontSize: 12.0,
       fontWeight: FontWeight.w500,
       color: ColorPalette.whiteColor,
     ),
-    headlineLarge: GoogleFonts.openSans(
+    labelLarge: GoogleFonts.roboto(
+      fontSize: 14.0,
+      fontWeight: FontWeight.w500,
+      color: const Color(0xFFA4C9FF),
+    ),
+    labelMedium: GoogleFonts.roboto(
+      fontSize: 12.0,
+      fontWeight: FontWeight.w500,
+      color: const Color(0xFFA4C9FF),
+    ),
+    labelSmall: GoogleFonts.roboto(
+      fontSize: 11.0,
+      fontWeight: FontWeight.w500,
+      color: const Color(0xFFA4C9FF),
+    ),
+    headlineLarge: GoogleFonts.roboto(
       fontSize: 32.0,
       fontWeight: FontWeight.bold,
       color: ColorPalette.whiteColor,
     ),
-    headlineMedium: GoogleFonts.openSans(
-      fontSize: 25.0,
-      fontWeight: FontWeight.w700,
-      color: ColorPalette.whiteColor,
-    ),
-    headlineSmall: GoogleFonts.openSans(
-      fontSize: 16.0,
+    headlineMedium: GoogleFonts.roboto(
+      fontSize: 28.0,
       fontWeight: FontWeight.w600,
       color: ColorPalette.whiteColor,
+    ),
+    headlineSmall: GoogleFonts.roboto(
+      fontSize: 24.0,
+      fontWeight: FontWeight.w600,
+      color: ColorPalette.whiteColor,
+    ),
+    titleMedium: GoogleFonts.roboto(
+      fontSize: 18.0,
+      fontWeight: FontWeight.w600,
+      color: const Color(0xFFA4C9FF),
     ),
   );
 }
