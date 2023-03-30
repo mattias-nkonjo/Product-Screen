@@ -63,9 +63,15 @@ class GeepxTheme {
     floatingActionButtonTheme: const FloatingActionButtonThemeData(
       foregroundColor: Color(0xFF001C39),
       backgroundColor: Color(0xFFD4E3FF),
+      elevation: 0.0,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(
+          Radius.circular(10),
+        ),
+      ),
     ),
     bottomAppBarTheme: const BottomAppBarTheme(
-      color: Color(0xFFFBFCFE),
+      color: Color(0xFFe9eff7),
       height: 80,
       surfaceTintColor: Color(0xFF43474E),
       elevation: 1.0,
@@ -88,6 +94,12 @@ class GeepxTheme {
     floatingActionButtonTheme: const FloatingActionButtonThemeData(
       foregroundColor: Color(0xFFD4E3FF),
       backgroundColor: Color(0xFF004883),
+      elevation: 0.0,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(
+          Radius.circular(10),
+        ),
+      ),
     ),
     bottomAppBarTheme: const BottomAppBarTheme(
       color: Color(0xFF242A30),

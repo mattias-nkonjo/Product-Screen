@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:geepx_test/src/constants/color_palette.dart';
+import 'package:geepx_test/src/widgets/floating_action_button.dart';
 import 'package:geepx_test/src/widgets/widgets.dart';
 
 class ProductPage extends StatefulWidget {
@@ -10,6 +12,35 @@ class ProductPage extends StatefulWidget {
 }
 
 class _ProductPageState extends State<ProductPage> {
+  late ScrollController _controller;
+
+  bool _isVisible = true;
+
+  FloatingActionButtonLocation get _fabLocation => _isVisible
+      ? FloatingActionButtonLocation.endContained
+      : FloatingActionButtonLocation.endFloat;
+
+  void _listen() {
+    final ScrollDirection direction = _controller.position.userScrollDirection;
+    if (direction == ScrollDirection.reverse) {
+      _show();
+    } else if (direction == ScrollDirection.forward) {
+      _hide();
+    }
+  }
+
+  void _show() {
+    if (!_isVisible) {
+      setState(() => _isVisible = true);
+    }
+  }
+
+  void _hide() {
+    if (_isVisible) {
+      setState(() => _isVisible = false);
+    }
+  }
+
   var _isActive = true;
   var _chipSelected = true;
   void _handleTap() {
@@ -25,6 +56,20 @@ class _ProductPageState extends State<ProductPage> {
   }
 
   @override
+  void initState() {
+    super.initState();
+    _controller = ScrollController();
+    _controller.addListener(_listen);
+  }
+
+  @override
+  void dispose() {
+    _controller.removeListener(_listen);
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -35,6 +80,7 @@ class _ProductPageState extends State<ProductPage> {
         title: const Text('Product Name'),
       ),
       body: SingleChildScrollView(
+        controller: _controller,
         child: Column(
           children: [
             Padding(
@@ -280,26 +326,11 @@ class _ProductPageState extends State<ProductPage> {
           ],
         ),
       ),
-      bottomNavigationBar: BottomAppBar(
-        child: Row(
-          children: [
-            IconButton(
-              tooltip: 'Share',
-              icon: const Icon(Icons.share),
-              onPressed: () {},
-            ),
-            IconButton(
-              tooltip: 'Favorite',
-              icon: const Icon(Icons.favorite_border_outlined),
-              onPressed: () {},
-            ),
-          ],
-        ),
+      floatingActionButton: FABWidget(
+        isVisible: _isVisible,
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: const Icon(Icons.add_shopping_cart),
-      ),
+      floatingActionButtonLocation: _fabLocation,
+      bottomNavigationBar: const BottomAppBarWidget(),
     );
   }
 }
