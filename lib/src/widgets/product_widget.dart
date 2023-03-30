@@ -7,15 +7,14 @@ class Product extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-        color: ColorPalette.purpleColor,
-        borderRadius: BorderRadius.circular(16),
-      ),
-      height: 320,
-      width: 320,
-      padding: const EdgeInsets.all(10),
-      margin: const EdgeInsets.only(right: 5, left: 5),
-      child: const Text('Product One'),
+      margin: const EdgeInsets.only(right: 10),
+      height: 280,
+      width: 325,
+      child: Card(
+          child: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Text(title),
+      )),
     );
   }
 }

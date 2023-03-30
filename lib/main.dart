@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:geepx_test/src/pages/another_page.dart';
 import 'package:geepx_test/src/pages/product_page.dart';
 import 'package:geepx_test/src/theme/theme.dart';
 
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: GeepxTheme.lightTheme,
       darkTheme: GeepxTheme.darkTheme,
       themeMode: ThemeMode.system,
-      home: const ProductPage(),
+      home: const BottomAppBarDemo(),
     );
   }
 }
