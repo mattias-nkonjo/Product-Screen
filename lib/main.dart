@@ -18,10 +18,6 @@ class MyApp extends StatelessWidget {
       return MaterialApp(
         title: 'Flutter Test',
         debugShowCheckedModeBanner: false,
-        // theme: GeepxTheme.lightTheme,
-        // darkTheme: GeepxTheme.darkTheme,
-        // themeMode: ThemeMode.system,
-
         theme: ThemeData(
           colorScheme: lightDynamic ?? GeepxTheme.defaultDarkColorScheme,
           useMaterial3: true,
