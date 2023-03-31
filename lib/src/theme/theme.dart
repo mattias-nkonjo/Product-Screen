@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:geepx_test/src/constants/color_palette.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -16,6 +17,11 @@ class GeepxTheme {
         fontSize: 22,
       ),
       elevation: 0.0,
+      systemOverlayStyle: SystemUiOverlayStyle(
+        statusBarColor: ColorPalette.whiteColor,
+        statusBarIconBrightness: Brightness.dark,
+        statusBarBrightness: Brightness.light,
+      ),
     ),
     cardTheme: const CardTheme(
       color: Color(0XFFFBFCFE),
@@ -86,6 +92,11 @@ class GeepxTheme {
       foregroundColor: Color(0xFFC3C6CF),
       backgroundColor: Color(0xFF191C1E),
       elevation: 0.0,
+      systemOverlayStyle: SystemUiOverlayStyle(
+        statusBarColor: Color(0xFF191C1E),
+        statusBarIconBrightness: Brightness.light,
+        statusBarBrightness: Brightness.dark,
+      ),
     ),
     dividerTheme: const DividerThemeData(
       color: Color(0xFF43474E),
