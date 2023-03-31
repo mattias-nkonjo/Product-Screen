@@ -12,10 +12,33 @@ class FABWidget extends StatelessWidget {
     return AnimatedContainer(
       duration: const Duration(milliseconds: 200),
       child: isVisible
-          ? FloatingActionButton(
-              onPressed: () {},
-              tooltip: 'Add To Shopping Cart',
-              child: const Icon(Icons.add_shopping_cart),
+          ? Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                SizedBox(
+                  height: 50,
+                  width: 100,
+                  child: FloatingActionButton(
+                    tooltip: 'Buy Now',
+                    onPressed: () {},
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const [
+                        Icon(Icons.shopping_cart_checkout),
+                        Text('Buy Now'),
+                      ],
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 30),
+                FloatingActionButton(
+                  tooltip: 'Add To Shopping Cart',
+                  child: const Icon(Icons.add_shopping_cart),
+                  onPressed: () {},
+                ),
+                const SizedBox(height: 15),
+              ],
             )
           : null,
     );
