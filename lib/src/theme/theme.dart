@@ -261,4 +261,10 @@ class GeepxTheme {
       color: const Color(0xFFA4C9FF),
     ),
   );
+
+  static final defaultLightColorScheme =
+      ColorScheme.fromSwatch(primarySwatch: Colors.blue);
+
+  static final defaultDarkColorScheme = ColorScheme.fromSwatch(
+      primarySwatch: Colors.blue, brightness: Brightness.dark);
 }
